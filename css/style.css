@@ -109,16 +109,17 @@ a {
     padding-left: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: calc(100% - 20px);
+    width: 100%;
     padding-top: 0%;
     padding-bottom: 0%;
     margin-top: 0px;
     margin-bottom: 0%;
+    /* width: 100%; */
 }
 /* small */
 @media (min-width:768px){
     .container {
-        width: 750px;
+        width: 100vw;
     }
 }
 /* medium */
@@ -140,6 +141,11 @@ a {
     margin-top: 0px;
     margin-bottom: 0px;
     background-color: white;
+    position:fixed;
+    top:0px;
+    width:100%;
+    left:0px;
+    z-index:500;
 }
 .header .container {
     display: flex;
@@ -180,6 +186,8 @@ a {
     margin-right: 10px;
     position: relative;
     overflow: hidden;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 .header .container > ul > li > a::before {
     content: "";
@@ -216,10 +224,12 @@ a {
     .header .container .logo a {
         margin-right: auto;
         margin-left: auto;
+        text-align:center;
     }
     .header .container {
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items:center;
     }
     .header .container ul {
      
@@ -251,17 +261,29 @@ a {
     top: calc(100%  + 20px);
     right: 0px;
     border-bottom: 1px solid black;
-    z-index: -1;
+    z-index: -1000;
+    display: none;
+    transition: 1.5s;
     opacity: 0;
-    transition: 0.3s opacity , 0.3s z-index , top 0.3s;
 }
 .header .container ul li:hover  .mega-menu {
-    z-index: 100;
+    z-index: 1000;
     opacity: 100;
+    display: flex;
     top: calc(100%);
+    
+    
+}
+.header .container ul li:hover {
+    z-index: 2000;
+
+
 
 }
-.header .container ul li .mega-menu .image {
+
+
+
+    .header .container ul li .mega-menu .image {
     max-width: 350px;
 }
 .header .container ul li .mega-menu .image img {
@@ -646,8 +668,7 @@ min-width: 300px;
     
 }
 .features .container .feat:hover .image::after {
-    /* transform: skewY(180deg); */
-    transform: skewY(-30deg) translateY(60%) rotateZ(90deg);
+    transform: skewY(-29deg) translateY(60%) rotateZ(90deg);
 }
 .features .container .feat:first-child .image .overlay{
 
@@ -985,6 +1006,8 @@ transform: translateY(-10px);
     width: 100%;
     overflow: hidden;
     position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 .services .container .serv .info .gray::after {
     content: counter(increment);
@@ -1003,9 +1026,15 @@ transform: translateY(-10px);
     color: var(--main-color);
     margin-left: auto;
     margin-right: 20px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    text-shadow:2px 2px 5px rgba(0, 0, 0, 0.248);
 }
 /* end of services */
 /* start of our skills  */
+.skill .main-header h2 a{
+    color: white !important;
+}
 .skill {
     background-color: #333;
     padding-bottom: 50px;
@@ -1036,6 +1065,7 @@ transform: translateY(-10px);
     height: 25px;
     background-color: #f9f9f9;
     position: relative;
+    border-radius: 6px;
 }
 .skill .container .skill-container .card .scale::before {
     content: "";
@@ -1045,6 +1075,7 @@ transform: translateY(-10px);
     left: 0px;
     background-color: var(--main-color);
     transition: 1s;
+    border-radius: 6px;
 }
 .skill .container .skill-container .card:first-child .scale::before {
     right: 20%;
@@ -1063,13 +1094,15 @@ transform: translateY(-10px);
     position: absolute;
     /* font-weight: 400; */
     font-size: 10px;
-    color: var(--main-color);
+    color: white;
     background-color: transparent;
     padding: 2px 5px ;
     top: -25px;
     right: 0%;
     border: 1px solid white;
     border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 .skill .container .skill-container .card:first-child .scale::after {
     content: "80%";
@@ -1181,6 +1214,9 @@ background-color: #333;
 padding-bottom: 50px;
 
 }
+.events .main-header h2 a {
+    color: white;
+}
 .events .side-dot:nth-child(2) ,
 .price .side-dot:nth-child(2) {
     width: 100px ;
@@ -1264,8 +1300,10 @@ width: 100%;
     color: var(--main-color-alt);
 }
 .events .container .info .text .calender li p{
-    font-size: 10px;
+    font-size: 15px;
     text-transform: capitalize;
+    color: white;
+    font-weight: bold;
 }
 .events .container .info .text .content h2{
     text-transform: capitalize;
@@ -1318,9 +1356,10 @@ width: 100%;
     } 
 }
 .events .container .subscribe form .mail input::placeholder {
-    font-weight: 100;
-    font-size: 10px;
+    /* font-weight: 100; */
+    font-size: 15px;
     text-transform: capitalize;
+    color: black;
 }
 .events .container .subscribe form input[type*="submi"]{
     background-color: var(--main-color);
@@ -1373,11 +1412,12 @@ width: 100%;
     margin-top: 0px;
 }
 .price .container .card .head p:last-of-type + span {
-    color: #777;
+    color: rgb(0, 0, 0);
     font-size: 10px;
     display: inline-block;
-    margin-top: -35px;
+    margin-top: -40px;
     letter-spacing: -0.5px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 .price .container .card .features ul {
@@ -1389,6 +1429,9 @@ width: 100%;
     font-size: 10px;
     text-transform: uppercase;
     position: relative;
+    color: rgb(60, 60, 60);
+    /* color: black; */
+    font-weight: bold;
 }
 .price .container .card .features ul li::before {
     font-family: "Font Awesome 5 Free";
@@ -1413,7 +1456,7 @@ width: 100%;
     border-radius: 6px;
     transition: var(--main-transition);
     position: relative;
-    z-index: 500;
+    z-index: 299;
     background-color: transparent;
 }
 .price .container .card button:hover {
@@ -1518,6 +1561,9 @@ width: 100%;
 }
 .price .container .card:hover::before {
     width: 100%;
+}
+.price .container .card ul li {
+    color: black;
 }
 /* end of price */
 /* start of top videos */
@@ -1753,7 +1799,7 @@ width: 100%;
         top: 0px;
         left: 0px;
         width: 100%;
-        height: 50%;
+        height: 51%;
         background-color: #138bedeb;
         z-index: 1;
         
@@ -1806,6 +1852,7 @@ width: 100%;
     padding: 40px 0px;
     margin-right: auto;
     margin-left: auto;
+    color: white;
 }
 @media (max-width:767px) {
     .discount .sec-container .section-two .title {
@@ -1833,6 +1880,7 @@ width: 100%;
     padding: 20px 10px;
     border: none;
     outline: none;
+    border-radius: 10px;
 }
 .discount .sec-container .section-two form input::placeholder,
 .discount .sec-container .section-two form textarea::placeholder{
@@ -1840,6 +1888,7 @@ width: 100%;
     letter-spacing: -0.5px;
     word-spacing: 2px;
     font-size: 15px;
+    font-weight: bold;
 }
 .discount .sec-container .section-two form .text-area textarea {
     width: 300px;
@@ -1848,6 +1897,7 @@ width: 100%;
     resize: none;
     border: none;
     outline: none;
+    border-radius: 10px;
 }
 
 
@@ -1861,6 +1911,7 @@ width: 100%;
     color: white;
     font-size: 15px;
     text-transform: capitalize;
+    border-radius: 10px;
 
 }
 
