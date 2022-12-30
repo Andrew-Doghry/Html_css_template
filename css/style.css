@@ -417,7 +417,7 @@ min-width: 300px;
     position: absolute;
     bottom: 30px;
     animation: 1s bounce infinite ;
-    left:calc(50% - 20px)
+    left:calc(50% - 10px)
 
 
 }
