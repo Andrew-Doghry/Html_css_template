@@ -32,7 +32,7 @@ console.log(window.innerHeight)
 let stats = document.querySelector('.stats')
 window.onscroll=()=>{
         if(num){
-    if(window.scrollY>=stats.offsetTop-250 ){
+    if(window.scrollY>=stats.offsetTop-400 ){
         countDown(countProjects,projects,15)
         countDown(countClients,clients,15)
         countDown(countCountires,countries,15 )
