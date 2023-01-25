@@ -1,4 +1,4 @@
-let countDownDate = new Date('Jan 7,2023 23:59:59').getTime();
+let countDownDate = new Date('Jan 7,2024 23:59:59').getTime();
 
 
 
